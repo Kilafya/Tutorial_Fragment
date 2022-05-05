@@ -5,7 +5,7 @@ import android.os.Bundle
 import com.example.tutorial_fragment.databinding.ActivityMainBinding
 import com.github.javafaker.Faker
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Contract {
 
     private val faker = Faker.instance()
     private lateinit var binding: ActivityMainBinding
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun createQuote(): String = faker.harryPotter().quote()
+    override fun createQuote(): String = faker.harryPotter().quote()
 
-    fun getScreenNumber() = supportFragmentManager.backStackEntryCount + 1
+    override fun getScreenNumber() = supportFragmentManager.backStackEntryCount + 1
 }

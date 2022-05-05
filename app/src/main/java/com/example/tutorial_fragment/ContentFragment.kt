@@ -28,8 +28,8 @@ class ContentFragment : Fragment() {
 
     private fun launchNext() {
         val fragment = newInstance(
-            counterValue = (requireActivity() as MainActivity).getScreenNumber() + 1,
-            quote = (requireActivity() as MainActivity).createQuote()
+            counterValue = executor().getScreenNumber() + 1,
+            quote = executor().createQuote()
         )
         parentFragmentManager
             .beginTransaction()
